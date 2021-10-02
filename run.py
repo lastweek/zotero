@@ -6,33 +6,86 @@ from pyzotero import zotero
 
 library_id=6048482
 library_type='user'
+
+# This key has write access
 api_key='zpi8IRsEUQn9FjLcO4AwwwLh'
+
 zot = zotero.Zotero(library_id, library_type, api_key)
 
-items = zot.top(limit=1)
-# we've retrieved the latest five top-level items in our library
-# we can print each item's item type and ID
-for item in items:
-    #  print('Item: %s | Key: %s' % (item['data']['itemType'], item['data']['key']))
-    print(item)
-    collectionId = item['data']['collections']
-    print('Title: %s | Date: %s | Collection: %s' %
-            (item['data']['title'], item['data']['date'], collectionId))
+#
+# This API call will dump all the item names under a collection
+# Default to a csv format.
+#
+def dumpItemsOfCollection(col):
+    collectionID=col['data']['key']
+    items = zot.everything(zot.collection_items(collectionID))
+    for item in items:
+        if item['data']['itemType'] != "attachment":
+            pub = 'unknown'
+            if item['data']['itemType'] == 'journalArticle':
+                pub = item['data']['publicationTitle']
+            if item['data']['itemType'] == 'conferencePaper':
+                pub = item['data']['proceedingsTitle']
 
-#  items = zot.collection_items('ZLYZXXRN')
-#  for item in items:
-#      print('\n Title: %s | DateAdded: %s | Tags: %s' % (item['data']['title'], item['data']['dateAdded'], item['data']['tags']))
+            #  print(item)
+            print("%s,%s,%s" %(item['data']['title'], item['data']['date'], pub))
 
+#
+# This function is used to update all item's type, publication title, and year
+# I use this after I add all papers from a conference. Serve as a batch operation.
+#
+def updateItemsOfCollection(col, publication, year):
+    collectionID=col['data']['key']
+    items = zot.everything(zot.collection_items(collectionID))
+    for item in items:
+        if item['data']['itemType'] != "attachment":
+            item['data']['itemType'] = 'conferencePaper'
+            item['data']['date'] = year
+            item['data']['proceedingsTitle'] = publication
+            zot.update_item(item)
 
-def printDir(col, i):
+def findCollectionByName(name):
+    cols = zot.everything(zot.collections())
+    for col in cols:
+        if col['data']['name'] == name:
+            return col
+    return None
+
+def dumpCollectionRecursive(col, i):
     spacing=' '*i
     print("%s%s" % (spacing, col['data']['name']))
-    #  sub = zot.collections_sub(col['data']['key'])
-    #  for s in sub:
-    #      printDir(s, i+2)
+    sub = zot.collections_sub(col['data']['key'])
+    for s in sub:
+        dumpCollectionRecursive(s, i+2)
 
-cols = zot.everything(zot.collections_top())
-print(cols)
-sorted(cols, key=lambda x: x['data']['name'])
-for col in cols:
-    printDir(col, 0)
+def main():
+
+    print("Please enable scripts as needed..")
+
+    #
+    # This section is used to update proceedings
+    #
+    #  col = findCollectionByName("07-ATC21")
+    #  if col != None:
+    #      updateItemsOfCollection(col, "ATC", "2021")
+    #      dumpItemsOfCollection(col)
+    #  col = findCollectionByName("07-OSDI21")
+    #  if col != None:
+    #      updateItemsOfCollection(col, "OSDI", "2021")
+    #      dumpItemsOfCollection(col)
+    #  col = findCollectionByName("08-SIGCOMM21")
+    #  if col != None:
+    #      updateItemsOfCollection(col, "SIGCOMM", "2021")
+    #      dumpItemsOfCollection(col)
+
+    #
+    # Print all directories
+    #
+    #  cols = zot.everything(zot.collections_top())
+    #  for col in cols:
+    #      dumpCollectionRecursive(col, 0)
+
+    print("All Done!")
+
+if __name__ == "__main__":
+    main()
