@@ -51,7 +51,7 @@ def findCollectionByName(zot, name):
 
 def dumpCollectionRecursive(zot, col, i, recursive):
     spacing=' '*i
-    print("%s- %s" % (spacing, col['data']['name']))
+    print("%s- %s" % (spacing, col['data']['name']), flush=True)
 
     if recursive == True:
         sub = zot.everything(zot.collections_sub(col['data']['key']))
@@ -63,6 +63,7 @@ def dumpCollectionRecursive(zot, col, i, recursive):
 # Print all directories recursively
 #
 def dumpAllCollections(zot):
+    print("All Collections")
     cols = zot.everything(zot.collections_top())
     cols = sorted(cols, key=lambda i:i['data']['name'])
     recursive = True
@@ -72,7 +73,6 @@ def dumpAllCollections(zot):
 def main():
 
     zot = zotero.Zotero(library_id, library_type, api_key)
-    print("Please enable scripts as needed..")
 
     #
     # This section is used to update proceedings
@@ -91,8 +91,6 @@ def main():
     #      dumpItemsOfCollection(col)
 
     dumpAllCollections(zot)
-
-    print("All Done!")
 
 if __name__ == "__main__":
     main()

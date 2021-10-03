@@ -1,0 +1,426 @@
+All Collections (dumped on Oct 2, 2021)
+
+- 00 Books
+    - Architecture
+    - Code Quality
+    - Datacenter
+    - Deep Learning Book
+    - FPGA
+    - Graphics
+    - Hardware
+    - Languages
+    - Low-level hack
+    - Memory
+    - Network
+    - Perf
+    - Security
+    - Systems
+- 05 Tech-Specs
+    - AMD
+    - ARM Specs
+    - BittWare
+    - CXL
+    - Cavium
+    - Ethernet Specs
+    - GPU
+    - Gen-Z
+    - Infiniband Specs
+    - Intel Specs
+        - FPGA
+        - Virt
+        - Xeon Ex
+        - Xeon Scalable
+    - NVIDINA DPU
+    - NVMe
+    - Netronome
+        - SDK
+    - OpenCAPI/CCIX
+    - PCIe
+    - RISC-V
+- 07 Classical
+- 08 Thesis
+- 09.00 Disaggregation
+    - Apps
+    - Memory
+    - Misc
+    - Network
+    - Storage
+- 10.00 Security
+    - 00 Confidential Computing
+    - Fuzzing
+    - GPU
+    - Hack
+    - Intel MPX
+    - Isolation
+- 11.00 Study Failures
+    - Cloud
+    - Memory
+    - Misc
+    - Network
+    - Storage
+- 11.00 Study Papers
+    - Misc
+    - Study-Network
+    - Study-Workloads
+- 11.00 Study Traces
+- 11.01 Cloud
+    - 00 Resource
+    - 00 Scheduling
+    - 00 Security
+    - 01 Storage
+        - Database
+        - Distributed FS
+        - Erasure-Coding
+        - Fault-tolerance
+        - Transactions
+    - 02 Caching
+    - 02 KVS
+    - Actors
+    - Availability
+    - Balancer
+    - Consensus
+    - Consistency
+    - Container/VM
+    - DSM
+    - Diagnosis/Debug
+    - Disaggregation
+        - dReDbox
+    - Dist-Shared-Log
+    - Energy/Power
+    - Function-Shipping
+    - Instance-Bustable
+    - Instance-Physical
+    - Instance-Spot
+    - InterDC/Geo
+    - Machine Learning
+    - Misc-Dist-Systems
+    - Private-Cloud
+    - Remote-Memory
+    - Serverless
+    - Tail-Latency
+- 11.02 Virtualization
+    - Network
+    - Project Overlake
+- 11.03 SysML
+    - Acclerators
+    - Dist ML
+    - NAS
+- 11.04 Caching
+    - DRAM Cache
+    - Distributed System
+    - Microarchitecture
+    - Virtual Cache
+- 12.00 Network
+    - 12.00 General
+    - 12.00 Topology
+        - Torus
+        - Upgrade
+        - must-read
+    - 12.01 Optical/Circuit Switch
+    - 12.01 pSwitch
+        - FPGA
+        - Multitenancy
+        - RMT/P4
+    - 12.02 pNIC
+        - FPGA
+            - Switch
+        - RMT
+        - SoC
+    - 12.03 Transport
+    - 12.03 pTransport
+    - 12.04 Congestion/Flow-Control
+        - Congestion
+        - Flow
+    - 12.05 RPC/Whole Stack
+        - RPC
+    - 12.06 Packet-Scheduling
+    - 12.07 RSS
+    - 12.40 Routing/BGP/Gateway
+    - 12.40 Virtual Private Network
+    - 12.41 Classfication
+    - 12.41 NFV
+    - 12.41 SDN
+    - 12.42 Middlebox
+    - 12.43 Network-as-a-service
+    - 12.50 Traffic Study
+    - 12.51 Traffic-Engineering
+    - 12.60 Failure
+    - 12.70 RDMA
+        - Consensus
+        - Guidelines
+    - Cloud
+    - Cost
+    - Diagnosis/Telemetry
+    - Disaggregation
+    - Load Balancing
+    - Security
+- 13.00 Virtualization
+    - Device
+    - IOMMU
+    - Network
+    - VM
+    - x86
+- 13.01 Kernel
+    - 00 Capability-based
+    - 00 Classical
+    - 00 Customization in kernel
+    - 00 Distributed OS
+    - 00 Heterogenous OS
+    - 00 Kernel Bypass
+    - 00 MicroKernel
+    - 00 Unikernels
+    - Container
+    - Kernel Using Special Languages
+    - Linux
+    - Linux-LWN
+    - MSR Singularity
+    - Misc
+    - Plan 9
+    - RCU
+    - Scheduling Kernel
+    - Storage
+    - Synthesis
+    - eBPF
+- 13.02 Memory
+    - 00 PM
+    - 01 HugeMemory
+    - 01 HugePage
+    - 01 IOMMU
+    - 01 MMU/TLB/Page Table
+    - 01 VM
+    - 01 VM-Swap
+    - 02 3D/PIM/NMP
+    - 02 Bandwidth
+    - 02 DRAM/MC
+        - Multiple-MC
+    - 02 FPGA
+    - 02 HBM
+- 13.03 File System
+    - Crash Consistency
+    - Fuzzing
+- 13.04 Storage
+    - Disks
+    - NVMe
+    - SSD
+    - Secure Rollback
+    - pStorage
+- 15 -----
+- 15.01 Architecture
+    - MMU
+    - Manuals
+    - Misc
+    - NoC
+    - OoO
+        - HelperThread
+        - Runahead
+        - Thread-Level Speculation
+    - PCIe
+    - Predictor
+    - Prefetch
+    - SMT
+- 15.02 Concurrency/Sync
+    - Delegation/RCL
+    - DistLock
+- 15.03 Coherence
+- 15.04 Consistency
+- 15.05 Dark-Processor-Hack
+- 19.01 Walls
+- 19.02 pDevices
+    - Active-Series
+    - Memory
+    - Memory Controller
+    - Storage
+    - pNIC/pSwitch
+- 19.03 FPGA
+    - ASIC
+    - App-DB
+    - App-Graph
+    - App-KVS
+    - App-ML
+    - App-Misc
+    - App-Net-NFV
+    - App-Network Stack
+        - RDMA
+        - in-network-computing
+    - App-PIM/NMP
+    - App-Storage
+    - App-consensus
+    - Books
+    - CAD
+    - Cloud
+    - Debug
+    - FPGA-Internals
+        - Place
+        - Route
+        - Synthesis
+    - Failure
+    - HLS
+    - Intel
+    - Memory
+    - Multi-FPGA
+    - Network
+    - NoC
+    - OS/Virtualization
+        - .ll file
+        - BRAM/DRAM
+        - Bitstream
+        - OS
+        - Sched
+        - Sched-Floorplanning
+        - Sched-ICAP
+        - Sched-PR
+        - Sched-Preemption
+        - Sched-Relocation
+        - Sched-Stub
+    - Overlay
+    - Power
+    - RTL2FPGA
+    - Security
+        - Untrusted cloud
+        - network
+    - Surveys
+    - Systems
+    - Verification
+    - Xilinx
+        - AXI
+        - Ethernet
+        - HLS
+        - PR
+        - SoC
+        - Tutorials
+        - Ultrascale
+        - VCU118
+        - Vivado
+        - ZCU106
+- 19.04 GPU
+- 20 --------
+- 20.01 App
+    - App-ML
+    - Compression
+    - Graph
+    - Hash
+    - Indexes
+    - KVS
+    - RocksDB
+    - Streaming
+    - Video
+- 20.02 Approximation
+- 20.03 Benchmarks
+- 20.04 Profiling
+- 30 --------
+- 31.00 Binary Optimization
+- 32.00 Verification
+- 90 -------
+- 92 Proposals
+- 93 Projects
+    - 2021-MSR-RISCV
+    - SuperNIC
+        - Google's
+        - Intel Red Canyon
+        - NSF
+        - Network-as-a-service
+        - Optical
+        - SmartNIC
+        - network->optical/circuit
+        - tcp/ip
+    - UCSD-CSE222A-2021
+    - UCSD-Research-Exam
+- 98 Submissions (CONFIDENTIAL)
+    - ASPLOS20
+    - ASPLOS21
+    - ATC20
+    - ATC21
+    - EuroSys21
+    - HotOS19
+    - NSDI21
+    - NSDI22
+    - Network
+    - OSDI20
+    - OSDI21
+    - SOSP19
+    - SOSP21
+    - TOS
+- 99 Companies
+    - Alibaba
+    - Bytedance
+    - Facebook
+    - Google
+    - HP
+    - Microsoft
+    - SnowFlake
+    - Tecent
+- 99 Proceedings
+    - 2018
+        - HPCA18
+    - 2019
+        - 10-MICRO
+        - ASPLOS19
+        - ATC19-July
+        - ApNet/Sys19
+        - CoNEXT19-Dec
+        - EuroSys-March
+        - FAST19
+        - FPGA/FCCM/FPL19
+        - HotCloud/Storage19-July
+        - HotNets19-Nov
+        - HotOS19-May
+        - ISCA19-June
+        - MICRO19-Oct
+        - NSDI19-Feb
+        - SIGCOMM19
+        - SOSP19-Oct
+        - Security19
+        - SoCC19
+    - 2020
+        - 01-CIDR20
+        - 02-FAST20
+        - 02-FPGA20
+        - 02-HPCA20
+        - 02-NSDI20
+        - 03-MLSys20
+        - 04-ASPLOS20
+            - Done
+        - 04-EuroSys20
+        - 04-VEE20
+        - 05-FCCM20
+        - 05-SP20
+        - 06-ISCA20
+        - 06-PLDI20
+        - 06-SIGMOD
+        - 07-ATC20
+        - 07-HotCloud/HotStorage20
+        - 08-APSys/APNet
+        - 08-SIGCOMM20
+        - 08-Security20
+        - 10-MICRO20
+        - 10-OSDI20
+        - 10-SoCC
+        - 11-HotNets20
+        - 12-CoNEXT20
+    - 2021
+        - 00-Honorable-Mentions
+        - 01-CIDR21-Done
+        - 02-FAST21-Done
+        - 02-FPGA21-Done
+        - 03-HPCA21-Done
+        - 03-MLSys
+        - 04-ASPLOS21
+        - 04-EuroSys21
+        - 04-NSDI21
+        - 04-VEE21
+        - 05-FCCM21-Done
+        - 05-HotOS21
+        - 06-ISCA21
+        - 06-PLDI21
+        - 06-SIGMOD21
+        - 07-ATC21
+        - 07-OSDI21
+        - 08-APNet
+        - 08-APSys
+        - 08-SIGCOMM21
+        - 08-VLDB
+        - 10-IMC21
+        - 10-MICRO21
+    - Others
+    - PLOS
+    - SIGCOMM
