@@ -1,0 +1,149 @@
+Please enable scripts as needed..
+- 00 Books
+    - Architecture
+    - Code Quality
+    - Datacenter
+    - Deep Learning Book
+    - FPGA
+    - Graphics
+    - Hardware
+    - Languages
+    - Low-level hack
+    - Memory
+    - Network
+    - Perf
+    - Security
+    - Systems
+- 05 Tech-Specs
+    - AMD
+    - ARM Specs
+    - BittWare
+    - CXL
+    - Cavium
+    - Ethernet Specs
+    - GPU
+    - Gen-Z
+    - Infiniband Specs
+    - Intel Specs
+        - FPGA
+        - Virt
+        - Xeon Ex
+        - Xeon Scalable
+    - NVIDINA DPU
+    - NVMe
+    - Netronome
+        - SDK
+    - OpenCAPI/CCIX
+    - PCIe
+    - RISC-V
+- 07 Classical
+- 08 Thesis
+- 09.00 Disaggregation
+    - Apps
+    - Memory
+    - Misc
+    - Network
+    - Storage
+- 10.00 Security
+    - 00 Confidential Computing
+    - Fuzzing
+    - GPU
+    - Hack
+    - Intel MPX
+    - Isolation
+- 11.00 Study Failures
+    - Cloud
+    - Memory
+    - Misc
+    - Network
+    - Storage
+- 11.00 Study Papers
+    - Misc
+    - Study-Network
+    - Study-Workloads
+- 11.00 Study Traces
+- 11.01 Cloud
+    - 00 Resource
+    - 00 Scheduling
+    - 00 Security
+    - 01 Storage
+        - Database
+        - Distributed FS
+        - Erasure-Coding
+        - Fault-tolerance
+        - Transactions
+    - 02 Caching
+    - 02 KVS
+    - Actors
+    - Availability
+    - Balancer
+    - Consensus
+    - Consistency
+    - Container/VM
+    - DSM
+    - Diagnosis/Debug
+    - Disaggregation
+        - dReDbox
+    - Dist-Shared-Log
+    - Energy/Power
+    - Function-Shipping
+    - Instance-Bustable
+    - Instance-Physical
+    - Instance-Spot
+    - InterDC/Geo
+    - Machine Learning
+    - Misc-Dist-Systems
+    - Private-Cloud
+    - Remote-Memory
+    - Serverless
+    - Tail-Latency
+- 11.02 Virtualization
+    - Network
+    - Project Overlake
+- 11.03 SysML
+    - Acclerators
+    - Dist ML
+    - NAS
+- 11.04 Caching
+    - DRAM Cache
+    - Distributed System
+    - Microarchitecture
+    - Virtual Cache
+- 12.00 Network
+    - 12.00 General
+    - 12.00 Topology
+        - Torus
+        - Upgrade
+        - must-read
+    - 12.01 Optical/Circuit Switch
+    - 12.01 pSwitch
+        - FPGA
+        - Multitenancy
+        - RMT/P4
+    - 12.02 pNIC
+        - FPGA
+            - Switch
+        - RMT
+        - SoC
+    - 12.03 Transport
+    - 12.03 pTransport
+    - 12.04 Congestion/Flow-Control
+        - Congestion
+        - Flow
+    - 12.05 RPC/Whole Stack
+        - RPC
+    - 12.06 Packet-Scheduling
+    - 12.07 RSS
+    - 12.40 Routing/BGP/Gateway
+    - 12.40 Virtual Private Network
+    - 12.41 Classfication
+    - 12.41 NFV
+    - 12.41 SDN
+    - 12.42 Middlebox
+    - 12.43 Network-as-a-service
+    - 12.50 Traffic Study
+    - 12.51 Traffic-Engineering
+    - 12.60 Failure
+    - 12.70 RDMA
+        - Consensus
+        - Guidelines

@@ -7,16 +7,14 @@ from pyzotero import zotero
 library_id=6048482
 library_type='user'
 
-# This key has write access
+# This key has read access
 api_key='zpi8IRsEUQn9FjLcO4AwwwLh'
-
-zot = zotero.Zotero(library_id, library_type, api_key)
 
 #
 # This API call will dump all the item names under a collection
 # Default to a csv format.
 #
-def dumpItemsOfCollection(col):
+def dumpItemsOfCollection(zot, col):
     collectionID=col['data']['key']
     items = zot.everything(zot.collection_items(collectionID))
     for item in items:
@@ -34,7 +32,7 @@ def dumpItemsOfCollection(col):
 # This function is used to update all item's type, publication title, and year
 # I use this after I add all papers from a conference. Serve as a batch operation.
 #
-def updateItemsOfCollection(col, publication, year):
+def updateItemsOfCollection(zot, col, publication, year):
     collectionID=col['data']['key']
     items = zot.everything(zot.collection_items(collectionID))
     for item in items:
@@ -44,22 +42,36 @@ def updateItemsOfCollection(col, publication, year):
             item['data']['proceedingsTitle'] = publication
             zot.update_item(item)
 
-def findCollectionByName(name):
+def findCollectionByName(zot, name):
     cols = zot.everything(zot.collections())
     for col in cols:
         if col['data']['name'] == name:
             return col
     return None
 
-def dumpCollectionRecursive(col, i):
+def dumpCollectionRecursive(zot, col, i, recursive):
     spacing=' '*i
-    print("%s%s" % (spacing, col['data']['name']))
-    sub = zot.collections_sub(col['data']['key'])
-    for s in sub:
-        dumpCollectionRecursive(s, i+2)
+    print("%s- %s" % (spacing, col['data']['name']))
+
+    if recursive == True:
+        sub = zot.everything(zot.collections_sub(col['data']['key']))
+        sub = sorted(sub, key=lambda i:i['data']['name'])
+        for s in sub:
+            dumpCollectionRecursive(zot, s, i+4, recursive)
+
+#
+# Print all directories recursively
+#
+def dumpAllCollections(zot):
+    cols = zot.everything(zot.collections_top())
+    cols = sorted(cols, key=lambda i:i['data']['name'])
+    recursive = True
+    for col in cols:
+        dumpCollectionRecursive(zot, col, 0, recursive=recursive)
 
 def main():
 
+    zot = zotero.Zotero(library_id, library_type, api_key)
     print("Please enable scripts as needed..")
 
     #
@@ -78,12 +90,7 @@ def main():
     #      updateItemsOfCollection(col, "SIGCOMM", "2021")
     #      dumpItemsOfCollection(col)
 
-    #
-    # Print all directories
-    #
-    #  cols = zot.everything(zot.collections_top())
-    #  for col in cols:
-    #      dumpCollectionRecursive(col, 0)
+    dumpAllCollections(zot)
 
     print("All Done!")
 
