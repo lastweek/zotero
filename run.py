@@ -37,9 +37,11 @@ def updateItemsOfCollection(zot, col, publication, year):
     items = zot.everything(zot.collection_items(collectionID))
     for item in items:
         if item['data']['itemType'] != "attachment":
-            item['data']['itemType'] = 'conferencePaper'
             item['data']['date'] = year
-            item['data']['proceedingsTitle'] = publication
+            if item['data']['itemType'] == 'conferencePaper':
+                item['data']['proceedingsTitle'] = publication
+            if item['data']['itemType'] == 'journalArticle':
+                item['data']['publicationTitle'] = publication
             zot.update_item(item)
 
 def findCollectionByName(zot, name):
@@ -77,6 +79,16 @@ def main():
     #
     # This section is used to update proceedings
     #
+    #  col = findCollectionByName(zot, "06-ISCA21")
+    #  if col != None:
+    #      updateItemsOfCollection(zot, col, "ISCA", "2021")
+    #      dumpItemsOfCollection(zot, col)
+    #
+    #  col = findCollectionByName(zot, "08-Security21")
+    #  if col != None:
+    #      updateItemsOfCollection(zot, col, "Security", "2021")
+    #      dumpItemsOfCollection(zot, col)
+    #
     #  col = findCollectionByName("07-ATC21")
     #  if col != None:
     #      updateItemsOfCollection(col, "ATC", "2021")
@@ -90,7 +102,7 @@ def main():
     #      updateItemsOfCollection(col, "SIGCOMM", "2021")
     #      dumpItemsOfCollection(col)
 
-    dumpAllCollections(zot)
+    #  dumpAllCollections(zot)
 
 if __name__ == "__main__":
     main()
