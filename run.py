@@ -101,6 +101,10 @@ def main():
     #  if col != None:
     #      updateItemsOfCollection(col, "SIGCOMM", "2021")
     #      dumpItemsOfCollection(col)
+    col = findCollectionByName(zot, "10-SOSP21")
+    if col != None:
+        updateItemsOfCollection(zot, col, "SOSP", "2021")
+        dumpItemsOfCollection(zot, col)
 
     #  dumpAllCollections(zot)
 
